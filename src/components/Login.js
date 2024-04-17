@@ -42,7 +42,7 @@ const Login = () => {
           // Signed up
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: userName?.current?.value,
+            displayName: userName?.current,
             photoURL:
               "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d54a6eed-5c37-4a6c-a284-827a04891881/d730j3d-aeed51c5-aac5-47d0-82e3-0c0ccc07ca20.png/v1/fill/w_1024,h_576,q_80,strp/pikachu___pokemon_minimalistic_wallpaper_no_logo_by_komankk_d730j3d-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDU0YTZlZWQtNWMzNy00YTZjLWEyODQtODI3YTA0ODkxODgxXC9kNzMwajNkLWFlZWQ1MWM1LWFhYzUtNDdkMC04MmUzLTBjMGNjYzA3Y2EyMC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pdkAEmpIQ5YchI2U7OzhpdZCUDzEotVWXlqe-TwRYM4",
           })
@@ -114,6 +114,9 @@ const Login = () => {
             type="text"
             placeholder="Full Name"
             className="p-4 my-4 w-full bg-gray-700"
+            onChange={(e) => {
+              userName.current = e.target.value;
+            }}
           />
         )}
         <input
